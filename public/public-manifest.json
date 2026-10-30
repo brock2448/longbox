@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.2",
-  "revision": "92e5b93556f6ebed",
+  "revision": "72ba16d9a46d5cdd",
   "files": [
     {
       "path": "app/geeks.js",
@@ -8,7 +8,7 @@
     },
     {
       "path": "app/images.js",
-      "sha256": "8a7bc678327ab5561a76ea64aebda0643df188a3f4e70b2a1c98e6ea4e1a0720"
+      "sha256": "eb854b15c41f85ab973729c963c09e8db35de45ef2fb2a9f56a2feed533a8097"
     },
     {
       "path": "app/importer.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "386cacc4390588be17d68e4e8cadb71751d3b464995e1fd853619c06ab3ede5a"
+      "sha256": "bc3cf7e0fef1d7d8530903d3dcf775672b49fbbdee12cde0ff121973864d209b"
     },
     {
       "path": "app/metron.js",
