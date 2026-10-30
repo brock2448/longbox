@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.1",
-  "revision": "0f7cba0d6fd4ab0e",
+  "revision": "2976a174177b7a3b",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "90078793b57768f5f593c2edad28b38f264f3b65af74eb429a8bd3b66ceb2911"
+      "sha256": "124af50d60f5959c7ebf24b6355eb1a7079b8e534f2cec37436d7db79106f81f"
     },
     {
       "path": "app/metron.js",
@@ -41,6 +41,10 @@
     {
       "path": "app/styles.css",
       "sha256": "8e8f9a2e24d97c4b0d167eb0b6e05ed2e44210ef985be2c961915a4674d94e94"
+    },
+    {
+      "path": "app/update.js",
+      "sha256": "3f4cc34226acfe07891e3db87ce28b36d6b9f4b0181faf92ff9581aa8ca905c5"
     },
     {
       "path": "app/widgets.js",
@@ -77,6 +81,10 @@
     {
       "path": "manifest.webmanifest",
       "sha256": "4298d7ab22f91077892811906353f4a5821d1800c83c445673bbf7af6d85f743"
+    },
+    {
+      "path": "update.html",
+      "sha256": "0c56a7ed89999ac05c9d6860276a7f651db7e1e5536c2fb0134388c48b079b56"
     }
   ],
   "privateDataIncluded": false
