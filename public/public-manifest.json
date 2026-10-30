@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.1",
-  "revision": "a51bdc74626f4eb0",
+  "revision": "a08a17ebbf8a0238",
   "files": [
     {
       "path": "app/geeks.js",
@@ -24,7 +24,7 @@
     },
     {
       "path": "app/migration.js",
-      "sha256": "37487f3702549bf9aee0aa9fea4a94ce777f77d7e409197fc2aa53eb24b8e890"
+      "sha256": "9527c7cbd3d05264d0128751db1256d4aed56d125da02b74f25cf3632cf021b0"
     },
     {
       "path": "app/model.js",
