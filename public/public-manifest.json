@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.2",
-  "revision": "387a2c19571be0ee",
+  "revision": "ac1974b4e45384e8",
   "files": [
     {
       "path": "app/geeks.js",
@@ -8,7 +8,7 @@
     },
     {
       "path": "app/images.js",
-      "sha256": "fd1c966be39544c5df7fe0b88999f853fcb2f92f6985db310586ebc1724d2d99"
+      "sha256": "c6dd329cfe5cddc4d4c2c53de2b60471202c066afdf0006aecdbdbc759b9f2c6"
     },
     {
       "path": "app/importer.js",
