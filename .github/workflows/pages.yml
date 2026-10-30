@@ -9,6 +9,7 @@ on:
         default: false
 permissions:
   contents: read
+  pages: read
 concurrency:
   group: longbox-pages
   cancel-in-progress: false
