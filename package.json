@@ -1,0 +1,11 @@
+{
+  "name": "longbox-public-deployment",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

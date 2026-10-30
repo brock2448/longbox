@@ -1,0 +1,2 @@
+import path from'node:path';
+export function staticPath(root,requestURL,basePath='/'){const base='/'+basePath.split('/').filter(Boolean).join('/')+(basePath.split('/').filter(Boolean).length?'/':'');const url=new URL(requestURL,'http://localhost'),decoded=decodeURIComponent(url.pathname);if(!decoded.startsWith(base)||decoded.includes('\\')||decoded.includes('\0'))return null;const relative=decoded.slice(base.length),file=path.resolve(root,relative.endsWith('/')||!relative?relative+'index.html':relative);return file.startsWith(path.resolve(root)+path.sep)?file:null;}

@@ -1,0 +1,68 @@
+name: Validate and optionally publish Longbox
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish public app after passing browser QA (owner approval required)'
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: longbox-pages
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate public-only payload
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto';
+          const manifest=JSON.parse(fs.readFileSync('public/public-manifest.json'));
+          if(manifest.privateDataIncluded!==false)throw Error('Unsafe manifest');
+          const allowed=new Set([...manifest.files.map(f=>f.path),'sw.js','public-manifest.json','.nojekyll']);
+          function walk(dir,rel=''){for(const n of fs.readdirSync(dir)){const r=rel+n,p=dir+'/'+n;if(fs.lstatSync(p).isSymbolicLink())throw Error('Symlink');if(fs.statSync(p).isDirectory())walk(p,r+'/');else if(!allowed.has(r))throw Error('Unexpected public file '+r);}}walk('public');
+          for(const f of manifest.files)if(crypto.createHash('sha256').update(fs.readFileSync('public/'+f.path)).digest('hex')!==f.sha256)throw Error('Changed public file '+f.path);
+          JS
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium webkit
+      - name: Genuine macOS Chromium and WebKit mobile and offline tests
+        run: node tests/browser.mjs
+      - name: Retain browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: longbox-browser-evidence
+          path: |
+            docs/browser-results.json
+            docs/browser-*.png
+      - uses: actions/configure-pages@v5
+        if: inputs.publish
+      - uses: actions/upload-pages-artifact@v4
+        if: inputs.publish
+        with:
+          path: public
+  deploy:
+    if: inputs.publish
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      installation_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy only validated public files
+        uses: actions/deploy-pages@v4
+        id: deployment
+      - name: Record exact installation URL
+        run: echo 'Install Longbox from ${{ steps.deployment.outputs.page_url }}' >> "$GITHUB_STEP_SUMMARY"
