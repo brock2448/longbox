@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.1",
-  "revision": "2976a174177b7a3b",
+  "revision": "5f4f2373312655e4",
   "files": [
     {
       "path": "app/geeks.js",
@@ -84,7 +84,7 @@
     },
     {
       "path": "update.html",
-      "sha256": "0c56a7ed89999ac05c9d6860276a7f651db7e1e5536c2fb0134388c48b079b56"
+      "sha256": "a653a7bf5ee8887aad41180319ec6c76486e460f9185e4a7d510909ad71f45aa"
     }
   ],
   "privateDataIncluded": false
