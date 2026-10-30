@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.2",
-  "revision": "ac1974b4e45384e8",
+  "revision": "83749a443c005b9a",
   "files": [
     {
       "path": "app/geeks.js",
@@ -88,7 +88,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "3aafbc33eb15107813a408a681c4c5dab531daef522b868f40c8fee02c29b613"
+      "sha256": "84bf2dddf9dd6de0d6f35015746c432dc488757511e77dac5e4772d1e24e33fd"
     },
     {
       "path": "manifest.webmanifest",
