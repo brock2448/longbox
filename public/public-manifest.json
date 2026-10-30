@@ -1,6 +1,6 @@
 {
-  "version": "4.0.0-rc.1",
-  "revision": "5f4f2373312655e4",
+  "version": "4.0.0-rc.2",
+  "revision": "bb850e404c6a4d7b",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "124af50d60f5959c7ebf24b6355eb1a7079b8e534f2cec37436d7db79106f81f"
+      "sha256": "8db7eeb6e40f0436c53340fa266e4aa6b4693fdd6d884a2d2dbaae25501d6152"
     },
     {
       "path": "app/metron.js",
@@ -28,7 +28,11 @@
     },
     {
       "path": "app/model.js",
-      "sha256": "06514fdc00c2a47a7cd4321e8adbb6fed8f87e15057c0749565755eed27188f8"
+      "sha256": "0f2ae5d37ee10138ea9528479bb5f32cfefe06c8f92d9eacba220b4e27bb900f"
+    },
+    {
+      "path": "app/normalizer.js",
+      "sha256": "5bf474646d56a503d22ee0190dc2ec702b2dc337179f508edfd12971cbab99c3"
     },
     {
       "path": "app/pulls.js",
@@ -36,11 +40,19 @@
     },
     {
       "path": "app/store.js",
-      "sha256": "10eb2024cd65cdd5692cfc8f9ea93415f4a2e39b3c1b48d88339ce066222ed6e"
+      "sha256": "ca58e557fc08cd7716ef0d8a46990229511dda8e6a618236cca8f0eb8aa46e20"
     },
     {
       "path": "app/styles.css",
-      "sha256": "8e8f9a2e24d97c4b0d167eb0b6e05ed2e44210ef985be2c961915a4674d94e94"
+      "sha256": "834d427b5365cdc76af643a82a94cdfa0bbc8b3cdfe8bb97a1b3bc48cb283ccc"
+    },
+    {
+      "path": "app/sync-ui.js",
+      "sha256": "3c3156f4c22a65c7397bc0248fc846a7e92cd4d984f7ed77c6338f81853fc742"
+    },
+    {
+      "path": "app/sync.js",
+      "sha256": "df2f5040c466be480e7b32a7fd58e9c0c75fc2fc64f28165baf9cd127cd9589f"
     },
     {
       "path": "app/update.js",

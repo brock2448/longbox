@@ -3,3 +3,5 @@
 .edition-cover{max-width:220px}
 
 dialog{overflow:auto;overscroll-behavior:contain}
+
+.table-scroll{overflow-x:auto;margin:1rem 0}.table-scroll table{border-collapse:collapse;width:100%;min-width:36rem}.table-scroll th,.table-scroll td{padding:.7rem;text-align:left;border-bottom:1px solid var(--line,#75644d);vertical-align:top}.table-scroll td{overflow-wrap:anywhere}.table-scroll select{min-width:10rem}

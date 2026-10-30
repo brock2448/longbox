@@ -1,4 +1,4 @@
-export const VERSION='4.0.0-rc.1';
+export const VERSION='4.0.0-rc.2';
 export const clone=x=>structuredClone(x);
 export const key=s=>String(s||'').replace(/\s*\(\d{4}(?:\s*[-–]\s*(?:present|\d{4}))?\)\s*$/i,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 export const clean=s=>String(s||'').replace(/\s*\(\d{4}(?:\s*[-–]\s*(?:present|\d{4}))?\)\s*$/i,'').trim();
