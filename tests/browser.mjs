@@ -9,8 +9,8 @@ async function route(page,name,heading){await page.evaluate(hash=>location.hash=
 async function imagesIdle(page){await page.waitForFunction(()=>{const d=window.longboxDiagnostics?.();return d?.images.firstImageMs!=null&&d.images.active===0&&d.images.queued===0;});}
 // Exercise the same file chooser and confirmation path used on the iPad, with synthetic data only.
 async function relayTransport(page,context){
-let requests=0;await context.route('https://transport-fixture.example/**',async route=>{requests++;await route.fulfill({status:200,contentType:'application/json',headers:{'Access-Control-Allow-Origin':'*'},body:JSON.stringify({results:[],count:0})});});
-const result=await page.evaluate(async()=>{const{Metron}=await import('./app/metron.js');const records=new Map(),store={get:async(_table,id)=>records.get(id),put:async(_table,value)=>records.set(value.id,value)};const client=new Metron(store);client.configure('https://transport-fixture.example','synthetic-browser-pair-123456789');return client.get('issue/?series_name=Batman');});
+let requests=0;await context.route('https://transport-fixture.example/**',async route=>{requests++;await route.fulfill({status:200,contentType:'application/json',headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Authorization','Access-Control-Allow-Methods':'GET, OPTIONS'},body:JSON.stringify({results:[],count:0})});});
+const result=await page.evaluate(async()=>{const{Metron}=await import('./app/metron.js');const records=new Map(),store={get:async(_table,id)=>records.get(id),put:async(_table,value)=>records.set(value.id,value)};const client=new Metron(store);client.configure('https://transport-fixture.example','synthetic-browser-pair-123456789');try{return await client.get('issue/?series_name=Batman');}catch(error){throw Error(error.message+'; native: '+error.cause?.name+': '+error.cause?.message);}});
 assert.deepEqual(result,{results:[],count:0});assert.equal(requests,1,'Native browser fetch reaches the relay transport');await context.unroute('https://transport-fixture.example/**');
 }
 async function migrationUI(page){
