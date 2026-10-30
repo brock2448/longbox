@@ -1,6 +1,6 @@
 {
   "version": "4.0.0-rc.2",
-  "revision": "83749a443c005b9a",
+  "revision": "1d47804d3285d0d4",
   "files": [
     {
       "path": "app/geeks.js",
@@ -52,7 +52,7 @@
     },
     {
       "path": "app/sync.js",
-      "sha256": "df2f5040c466be480e7b32a7fd58e9c0c75fc2fc64f28165baf9cd127cd9589f"
+      "sha256": "fb91fa4f37685a831c1ba680624dfb2111b849c12dac99e9e501867126cc417f"
     },
     {
       "path": "app/update.js",
