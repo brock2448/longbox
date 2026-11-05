@@ -1,6 +1,6 @@
 {
-  "version": "4.0.0-rc.2",
-  "revision": "0dee81a679953cc6",
+  "version": "4.1.0-rc.1",
+  "revision": "48f70702372856ce",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "bc3cf7e0fef1d7d8530903d3dcf775672b49fbbdee12cde0ff121973864d209b"
+      "sha256": "5e53bf51fa0ded98c66e3ef4a9cee45e401db126d8c5b926377b62a30df89e72"
     },
     {
       "path": "app/metron.js",
@@ -28,11 +28,11 @@
     },
     {
       "path": "app/model.js",
-      "sha256": "0f2ae5d37ee10138ea9528479bb5f32cfefe06c8f92d9eacba220b4e27bb900f"
+      "sha256": "3647f60e6f2868a27d8baf04fd720ca1f9e00beda025c6ccc8f890e04318118b"
     },
     {
       "path": "app/normalizer.js",
-      "sha256": "5bf474646d56a503d22ee0190dc2ec702b2dc337179f508edfd12971cbab99c3"
+      "sha256": "a419f007e51be690ef9cf113b1194544fea66e2079c08ce4fafb241fe4bc806b"
     },
     {
       "path": "app/pulls.js",
@@ -44,7 +44,7 @@
     },
     {
       "path": "app/styles.css",
-      "sha256": "834d427b5365cdc76af643a82a94cdfa0bbc8b3cdfe8bb97a1b3bc48cb283ccc"
+      "sha256": "3b2e8afc3c7d8374db660b09b7effb89d3b57c50a403c9b4ca23a3f13b9c266a"
     },
     {
       "path": "app/sync-ui.js",
@@ -60,7 +60,7 @@
     },
     {
       "path": "app/widgets.js",
-      "sha256": "018bb65dc2f305aff0d38b2ac50e0dde9054aa9f637b83d00d7c40824808a647"
+      "sha256": "af69b802e4e84f3fdc664d14debf68a6c8ce28a9aca7bb097fe0cdd3ea2e2d4f"
     },
     {
       "path": "assets/AI_NORMALIZER_PROMPT.md",
@@ -76,23 +76,23 @@
     },
     {
       "path": "assets/icon-192.png",
-      "sha256": "e0a20478db9b683e9044d9cbb94bc8e2d0baf8dd15b9c62c8f2cb840cb44dcdc"
+      "sha256": "7be2812c16de1d4482f3749d5f8379a228e3ae33ec52046c2a2fde1aef8e4aca"
     },
     {
       "path": "assets/icon-512.png",
-      "sha256": "fd6ae44013d3ec85335ec8eea868758a706a5e3359e456103bce48f3ac25ae1c"
+      "sha256": "e3c35967e8cba9c9c5b33d603cbd4bb5c583480f49d7294d34dcfab5ed229e69"
     },
     {
       "path": "assets/icon.svg",
-      "sha256": "f0c011f5ceb652ae1abe56be8e795b595424fef5b8f2d31a5c28c1949ea38334"
+      "sha256": "6d8fbbe7564777cc780f952a1a64dfa7a168c6c60c6fadbf3f84d66c95004508"
     },
     {
       "path": "index.html",
-      "sha256": "84bf2dddf9dd6de0d6f35015746c432dc488757511e77dac5e4772d1e24e33fd"
+      "sha256": "f0c14576d8262ee2a1a4453f8ad7308de72c2246f3aa8d300ad674bea5a5cf41"
     },
     {
       "path": "manifest.webmanifest",
-      "sha256": "4298d7ab22f91077892811906353f4a5821d1800c83c445673bbf7af6d85f743"
+      "sha256": "74efa7757c19f4680234f95cbe07a732ab51564abee4b30c1bed959dc158a740"
     },
     {
       "path": "update.html",

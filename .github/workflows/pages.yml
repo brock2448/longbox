@@ -1,5 +1,7 @@
 name: Validate and optionally publish Longbox
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -45,6 +47,7 @@ jobs:
           path: |
             docs/browser-results.json
             docs/browser-*.png
+            docs/noir-*.png
       - uses: actions/configure-pages@v5
         if: inputs.publish
       - uses: actions/upload-pages-artifact@v4
