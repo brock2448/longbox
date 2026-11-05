@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "b42cfa8e0da3c116",
+  "revision": "5968ad0f5aaea249",
   "files": [
     {
       "path": "app/geeks.js",
@@ -8,7 +8,7 @@
     },
     {
       "path": "app/images.js",
-      "sha256": "72ac3a9938574251f66cebf03f097141d1fb68d8bdd7f070ea471fb6fea109b4"
+      "sha256": "fe928e7034212efe95cc601c0134f44188dc06a09f6502485a19d3da27738a02"
     },
     {
       "path": "app/importer.js",
@@ -40,11 +40,11 @@
     },
     {
       "path": "app/store.js",
-      "sha256": "bb505b364d6e32e65f5e7868da11a4060c0788c285edbc49226c62fb716ed1df"
+      "sha256": "98d9e611cd47eb45f03468b243598fbb67d1990aae1cc81c16f8eb3abcc0cdf2"
     },
     {
       "path": "app/styles.css",
-      "sha256": "422909fd00c9702022408f460743cf8c687bccd3b5f66b40e19c70f59d782706"
+      "sha256": "42b8a9b20a8faddb686db2e148d89457cf2fe60caf0269ee24a096ab2be9e064"
     },
     {
       "path": "app/sync-ui.js",

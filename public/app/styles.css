@@ -123,4 +123,4 @@ dialog::backdrop { background: rgba(24,17,13,.72); }
 @media (max-width:560px) { .reader-row { grid-template-columns: 56px minmax(0,1fr); gap:14px; } }
 
 /* Route focus announces the main region without a browser ring around its heading. */
-#main:focus { outline: none; }
+#main:focus, #main h1[tabindex="-1"]:focus { outline: none; }

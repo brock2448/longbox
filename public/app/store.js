@@ -1,6 +1,10 @@
+// Byte provenance is kept only while the corresponding Blob is alive.
+const knownBytes=new WeakMap();
+export function rememberBlobBytes(blob,bytes){if(!(bytes instanceof ArrayBuffer)||bytes.byteLength!==blob.size)throw Error('Artwork byte size mismatch');knownBytes.set(blob,bytes);return blob;}
+export function knownBlobBytes(blob){return knownBytes.get(blob);}
 // Keep legacy Blobs for rollback; byte copies avoid WebKit persisted-Blob handles.
-async function binaryRecord(store,row,{preserveBinary=false}={}){if(!['assets','thumbs'].includes(store)||!row?.blob)return row;if(preserveBinary){if(!(row.binaryBytes instanceof ArrayBuffer)||row.binaryBytes.byteLength!==row.blob.size||row.binaryType!==row.blob.type)throw Error('Invalid retained artwork bytes');return row;}return{...row,binaryBytes:await row.blob.arrayBuffer(),binaryType:row.blob.type};}
-function readableRecord(row){return row?.binaryBytes instanceof ArrayBuffer?{...row,blob:new Blob([row.binaryBytes],{type:row.binaryType||row.blob?.type||''})}:row;}
+async function binaryRecord(store,row,{preserveBinary=false}={}){if(!['assets','thumbs'].includes(store)||!row?.blob)return row;if(preserveBinary){if(!(row.binaryBytes instanceof ArrayBuffer)||row.binaryBytes.byteLength!==row.blob.size||row.binaryType!==row.blob.type)throw Error('Invalid retained artwork bytes');return row;}return{...row,binaryBytes:knownBlobBytes(row.blob)||await row.blob.arrayBuffer(),binaryType:row.blob.type};}
+function readableRecord(row){return row?.binaryBytes instanceof ArrayBuffer?{...row,blob:rememberBlobBytes(new Blob([row.binaryBytes],{type:row.binaryType||row.blob?.type||''}),row.binaryBytes)}:row;}
 import{captureSyncChanges}from'./sync.js';
 import{empty,validate,clone}from'./model.js';
 function storageError(tx,event,message){return event?.target?.error||tx.error||Error(message);}
