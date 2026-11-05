@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "3a3e262fa6fcdbf8",
+  "revision": "b42cfa8e0da3c116",
   "files": [
     {
       "path": "app/geeks.js",
@@ -8,7 +8,7 @@
     },
     {
       "path": "app/images.js",
-      "sha256": "53ac5a44332cd5ecc6e3c127a8d9cf2025635ce878e658f87b96dd928c12e02e"
+      "sha256": "72ac3a9938574251f66cebf03f097141d1fb68d8bdd7f070ea471fb6fea109b4"
     },
     {
       "path": "app/importer.js",
@@ -40,7 +40,7 @@
     },
     {
       "path": "app/store.js",
-      "sha256": "aa1effe640f12eb3b6c4fbe525d9cca4dd35b99abf32ac392ead067146214e3c"
+      "sha256": "bb505b364d6e32e65f5e7868da11a4060c0788c285edbc49226c62fb716ed1df"
     },
     {
       "path": "app/styles.css",
