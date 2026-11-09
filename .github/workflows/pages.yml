@@ -1,5 +1,7 @@
 name: Validate and optionally publish Longbox
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -13,11 +15,17 @@ permissions:
   contents: read
   pages: read
 concurrency:
-  group: longbox-pages
-  cancel-in-progress: false
+  group: longbox-pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   validate:
-    runs-on: macos-latest
+    name: Browser validation (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,25 +42,26 @@ jobs:
           for(const f of manifest.files)if(crypto.createHash('sha256').update(fs.readFileSync('public/'+f.path)).digest('hex')!==f.sha256)throw Error('Changed public file '+f.path);
           JS
       - run: npm install --ignore-scripts --no-audit --no-fund
-      - run: npx playwright install chromium webkit
-      - name: Genuine macOS Chromium and WebKit mobile and offline tests
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Genuine Chromium and WebKit mobile and offline tests
         run: node tests/browser.mjs
       - name: Retain browser evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: longbox-browser-evidence
+          name: longbox-browser-evidence-${{ matrix.os }}
           path: |
             docs/browser-results.json
             docs/browser-*.png
+            docs/noir-*.png
       - uses: actions/configure-pages@v5
-        if: inputs.publish
+        if: github.event_name == 'workflow_dispatch' && inputs.publish && matrix.os == 'ubuntu-24.04'
       - uses: actions/upload-pages-artifact@v4
-        if: inputs.publish
+        if: github.event_name == 'workflow_dispatch' && inputs.publish && matrix.os == 'ubuntu-24.04'
         with:
           path: public
   deploy:
-    if: inputs.publish
+    if: github.event_name == 'workflow_dispatch' && inputs.publish
     needs: validate
     runs-on: ubuntu-latest
     permissions:
