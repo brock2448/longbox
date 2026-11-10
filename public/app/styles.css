@@ -154,3 +154,7 @@ button:focus-visible,a:focus-visible,input:focus,textarea:focus,select:focus { o
  .toolbar { padding:12px; gap:12px; }
  .toolbar label:first-child { flex-basis:100%; }
 }
+
+/* Stable opaque navigation, following native iPad toolbars. No fading cover bleed. */
+#top,#tabs { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+#top { box-shadow:0 1px 0 var(--border-subtle); }
