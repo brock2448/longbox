@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "274c32f36544dfee",
+  "revision": "0e014e1381c7d41b",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,11 +16,11 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "f19f0549613d2017a039c6335047a6b1b81d73accade29d0fedaf2e1e4b970b6"
+      "sha256": "7e9b8478c4ebbc70739c40a0d4be211e37a13abf408e36070edc40674de3f6ab"
     },
     {
       "path": "app/metron.js",
-      "sha256": "7bd6657906d69b3ff6677cdba091237a10952077f1ccdc5097e5f9c4ea0bcc58"
+      "sha256": "429a182313ee5c5d088a28d0db56e598eb434f3d82417d6520ab1686d06c5f3c"
     },
     {
       "path": "app/migration.js",
@@ -28,7 +28,7 @@
     },
     {
       "path": "app/model.js",
-      "sha256": "7b9cf58ee8cacd66b3d7abb17cbbe33d0931549c04ea58002d4d58571c404ce0"
+      "sha256": "84ddab0b9a08ef541b87db52664f9f15b8121854501ad267800ff342f7c9de5b"
     },
     {
       "path": "app/normalizer.js",
@@ -44,7 +44,7 @@
     },
     {
       "path": "app/styles.css",
-      "sha256": "bf32e8adf73037bd4c6bc54270efd502e1798b3c94acb9024965da20b4d9bb74"
+      "sha256": "133dd029b166114f409c96d7d64e871d1950c6a2f36a1caf55e11f44d5e55602"
     },
     {
       "path": "app/sync-ui.js",
@@ -56,7 +56,7 @@
     },
     {
       "path": "app/title-search.js",
-      "sha256": "34858e2cfa729ef0e6ee3f11c3c8b102dc80ae0955e1a31edaee7a352328d5e7"
+      "sha256": "c9c54620fdc2aa833b2ff74f3ac69687b9cf8f5bfc8c18eb3f97217d9b45bc55"
     },
     {
       "path": "app/update.js",
@@ -92,7 +92,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "a9351f7a8caae38638eb69608e532cddf2cc33ee4ec0df9061486661c6780813"
+      "sha256": "44236e0ab21024b38189046d7e5445ab08b9cdce0bd84cbbdecbc25ee17e157d"
     },
     {
       "path": "manifest.webmanifest",

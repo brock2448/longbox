@@ -29,3 +29,19 @@ export function matchesTitleQuery(query,...values){
  const tokenize=v=>String(v).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,' and ').match(/[a-z0-9]+/g)||[];
  const wanted=tokenize(raw),words=tokenize(text);return wanted.length>0&&wanted.every(w=>words.some(t=>t===w||w.length>=4&&/^[a-z]+$/.test(w)&&Math.abs(w.length-t.length)<=1&&distance(w,t)<=1));
 }
+
+// Automatic recognition requires publication evidence, not a fuzzy score alone.
+export function publicationKey(title){return titleKey(String(title||'').replace(/^the\s+/i,''));}
+export function automaticMatch(item,candidates,peers=[],{complete=true}={}){
+ if(!complete||!item.number)return null;
+ const known=new Set(peers.filter(p=>p.id!==item.id&&p.sid&&publicationKey(p.series)===publicationKey(item.series)).map(p=>+p.sid));
+ const eligible=rankResults({title:item.series,number:item.number},candidates).filter(d=>{
+  if(issueNumber(d.number)!==issueNumber(item.number)||publicationKey(d.series?.name)!==publicationKey(item.series))return false;
+  if(item.metronId&&+item.metronId!==+d.id||item.sid&&+item.sid!==+d.series?.id)return false;
+  if(item.volume&&d.series?.volume&&+item.volume!==+d.series.volume)return false;
+  if(known.size===1)return known.has(+d.series?.id);
+  if(known.size>1)return false;
+  const explicitStart=item.editions?.some(e=>e.metron_year_began);return !!item.year&&(+item.year===+d.series?.year_began||!explicitStart&&String(d.store_date||'').slice(0,4)===String(item.year));
+ });
+ if(eligible.length!==1)return null;return{candidate:eligible[0],reason:known.size===1?'Verified series already in Library':'Title, issue and publication year agree'};
+}
