@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "fa6f3cdc721491a4",
+  "revision": "cd12a61b479e33e1",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,11 +16,11 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "bf060e3d057600210055f2870e66145e4a6d30638d47952f7b64ccaacd1d8f24"
+      "sha256": "8ea62e4f6d3943d3120187fb4d148a1e638982c9c10eb504dc53392b603d810e"
     },
     {
       "path": "app/metron.js",
-      "sha256": "a532832e810198d66d3e7c040699e2001e521813933f7d45bfcf3f196c1c87c5"
+      "sha256": "7bd6657906d69b3ff6677cdba091237a10952077f1ccdc5097e5f9c4ea0bcc58"
     },
     {
       "path": "app/migration.js",
@@ -28,7 +28,7 @@
     },
     {
       "path": "app/model.js",
-      "sha256": "3647f60e6f2868a27d8baf04fd720ca1f9e00beda025c6ccc8f890e04318118b"
+      "sha256": "7b9cf58ee8cacd66b3d7abb17cbbe33d0931549c04ea58002d4d58571c404ce0"
     },
     {
       "path": "app/normalizer.js",
@@ -44,7 +44,7 @@
     },
     {
       "path": "app/styles.css",
-      "sha256": "6a0b0714560855368a75463e5551ea4d22734746261e8dbe4f74470ba51827f7"
+      "sha256": "bf32e8adf73037bd4c6bc54270efd502e1798b3c94acb9024965da20b4d9bb74"
     },
     {
       "path": "app/sync-ui.js",
@@ -53,6 +53,10 @@
     {
       "path": "app/sync.js",
       "sha256": "fb91fa4f37685a831c1ba680624dfb2111b849c12dac99e9e501867126cc417f"
+    },
+    {
+      "path": "app/title-search.js",
+      "sha256": "e2ad1e012711bcb6890a86e368526878ed09e30b1074d6c826910c3e6bdb79cb"
     },
     {
       "path": "app/update.js",
