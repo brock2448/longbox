@@ -15,7 +15,7 @@ async searchIssues(text,number='',{broaden=false}={}){
   catch(error){if(!rows.length)throw error;incomplete=true;break;}
   used.push(query);rows.push(...(page.results||[]));next=page.next||null;
   if(rows.length&&!broaden)break;
-  if(rows.some(d=>rankCandidate(interpreted,d).exact))break;
+  if(rows.some(d=>rankCandidate(interpreted,d).exact||publicationKey(interpreted.title)===publicationKey(d.series?.name)&&(!interpreted.number||issueNumber(d.number)===interpreted.number)&&(!interpreted.year||+d.series?.year_began===interpreted.year)&&(!interpreted.volume||+d.series?.volume===interpreted.volume)))break;
  }
  return{results:rankResults(interpreted,rows),next,interpreted,queries:used,incomplete};
 }

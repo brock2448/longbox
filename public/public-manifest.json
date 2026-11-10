@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "a827e8d2e46a962a",
+  "revision": "0e014e1381c7d41b",
   "files": [
     {
       "path": "app/geeks.js",
@@ -20,7 +20,7 @@
     },
     {
       "path": "app/metron.js",
-      "sha256": "ffc78b95323d82396889b8d56bb32cf56e732b67c29820d026471384e6d6a7ef"
+      "sha256": "429a182313ee5c5d088a28d0db56e598eb434f3d82417d6520ab1686d06c5f3c"
     },
     {
       "path": "app/migration.js",
