@@ -22,3 +22,10 @@ export function rankCandidate(input,d){
  return{score:(exactTitle?100:Math.round(similarity*70))+(numberOK?10:-100)-(year?12:0)-(volume?15:0),exact:exactTitle&&numberOK&&!year&&!volume,warnings};
 }
 export function rankResults(input,rows){return [...new Map(rows.filter(d=>d?.id&&d.series?.name&&d.number!=null).map(d=>[String(d.id),d])).values()].sort((a,b)=>rankCandidate(input,b).score-rankCandidate(input,a).score||+a.id-+b.id);}
+// Local filtering tolerates punctuation, word order and a single typo in longer words.
+// It only changes visible search results; it never establishes comic identity.
+export function matchesTitleQuery(query,...values){
+ const raw=String(query||'').trim();if(!raw)return true;const text=values.join(' '),q=titleKey(raw);if(titleKey(text).includes(q))return true;
+ const tokenize=v=>String(v).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,' and ').match(/[a-z0-9]+/g)||[];
+ const wanted=tokenize(raw),words=tokenize(text);return wanted.length>0&&wanted.every(w=>words.some(t=>t===w||w.length>=4&&/^[a-z]+$/.test(w)&&Math.abs(w.length-t.length)<=1&&distance(w,t)<=1));
+}

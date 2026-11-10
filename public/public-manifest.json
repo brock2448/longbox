@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "cd12a61b479e33e1",
+  "revision": "274c32f36544dfee",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "8ea62e4f6d3943d3120187fb4d148a1e638982c9c10eb504dc53392b603d810e"
+      "sha256": "f19f0549613d2017a039c6335047a6b1b81d73accade29d0fedaf2e1e4b970b6"
     },
     {
       "path": "app/metron.js",
@@ -56,7 +56,7 @@
     },
     {
       "path": "app/title-search.js",
-      "sha256": "e2ad1e012711bcb6890a86e368526878ed09e30b1074d6c826910c3e6bdb79cb"
+      "sha256": "34858e2cfa729ef0e6ee3f11c3c8b102dc80ae0955e1a31edaee7a352328d5e7"
     },
     {
       "path": "app/update.js",
