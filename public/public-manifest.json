@@ -1,6 +1,6 @@
 {
   "version": "4.1.0-rc.1",
-  "revision": "0e014e1381c7d41b",
+  "revision": "57ba7f70d60265d1",
   "files": [
     {
       "path": "app/geeks.js",
@@ -16,7 +16,7 @@
     },
     {
       "path": "app/main.js",
-      "sha256": "7e9b8478c4ebbc70739c40a0d4be211e37a13abf408e36070edc40674de3f6ab"
+      "sha256": "b7a9a8641455d99fac3621cd302ef2f4b48f1dbf490b8e681d6494adc363b66a"
     },
     {
       "path": "app/metron.js",
@@ -44,7 +44,7 @@
     },
     {
       "path": "app/styles.css",
-      "sha256": "133dd029b166114f409c96d7d64e871d1950c6a2f36a1caf55e11f44d5e55602"
+      "sha256": "de0794e97f46fc1d929885e13dcc85fb59cac35a0cc56f9602434bc3021b600b"
     },
     {
       "path": "app/sync-ui.js",
@@ -92,7 +92,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "44236e0ab21024b38189046d7e5445ab08b9cdce0bd84cbbdecbc25ee17e157d"
+      "sha256": "339c701ce05129a85d8f49f45c615a9089ecca7cac2914fda03209861efc7f35"
     },
     {
       "path": "manifest.webmanifest",
